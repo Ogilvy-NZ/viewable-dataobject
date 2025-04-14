@@ -9,18 +9,21 @@
         }
     ],
     "keywords": [
-        "silverstripe", "dataobject", "page", "viewable"
+        "silverstripe",
+        "dataobject",
+        "page",
+        "viewable"
     ],
     "type": "silverstripe-vendormodule",
     "license": "BSD-3-Clause",
-    "require": {
-        "silverstripe/recipe-cms": "^1.0 || ^4.0",
-        "silverstripe/vendor-plugin": "^1.0 || ^2.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^5.7",
-        "squizlabs/php_codesniffer": "*"
-    },
+	"require": {
+		"silverstripe/recipe-cms": "^5.4",
+		"silverstripe/vendor-plugin": "^2.1"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^9.6",
+		"squizlabs/php_codesniffer": "^3.12"
+	},
     "autoload": {
         "psr-4": {
             "Dynamic\\ViewableDataObject\\": "src",
@@ -28,7 +31,12 @@
         }
     },
     "config": {
-        "process-timeout": 600
+        "process-timeout": 600,
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/recipe-plugin": true,
+            "silverstripe/vendor-plugin": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -36,6 +44,19 @@
         "installer-name": "viewable-dataobject",
         "branch-alias": {
             "dev-master": "2.0.x-dev"
-        }
+        },
+        "project-files-installed": [
+            ".htaccess",
+            "app/.htaccess",
+            "app/_config/mimevalidator.yml",
+            "app/_config/mysite.yml",
+            "app/src/Page.php",
+            "app/src/PageController.php"
+        ],
+        "public-files-installed": [
+            ".htaccess",
+            "index.php",
+            "web.config"
+        ]
     }
 }
